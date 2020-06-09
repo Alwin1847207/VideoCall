@@ -6,4 +6,8 @@
     <string name="message">Message</string>
     <string name="share">Share</string>
     <string name="feedback">Feedback</string>
+    <string name="account">account</string>
+    <string name="logout">Logout</string>
+    <string name="made_in_with_opensource">Made in ❤️ with OpenSource</string>
+    <string name="version_1_0">Version 1.0</string>
 </resources>
