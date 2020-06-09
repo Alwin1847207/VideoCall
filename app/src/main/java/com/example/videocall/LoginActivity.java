@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()){
+                switch (view.getId()) {
                     case R.id.sign_in_button:
                         signIn();
                         break;
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         // Configure sign-in to request the user's ID, email address, and basic
-// profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
@@ -53,16 +53,16 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-//    @Override
-//    protected void onStart() {
-//        super.onStart();
-//        // Check for existing Google Sign In account, if the user is already signed in
-//// the GoogleSignInAccount will be non-null.
-//        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
-//        Intent dashboard = new Intent(this,HomeActivity.class);
-//        startActivity(dashboard);
-//        finish();
-//    }
+    //    @Override
+    //    protected void onStart() {
+    //        super.onStart();
+    //        // Check for existing Google Sign In account, if the user is already signed in
+    //        // the GoogleSignInAccount will be non-null.
+    //        GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
+    //        Intent dashboard = new Intent(this,HomeActivity.class);
+    //        startActivity(dashboard);
+    //        finish();
+    //    }
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
-            Intent dashboard = new Intent(this,HomeActivity.class);
+            Intent dashboard = new Intent(this, HomeActivity.class);
             startActivity(dashboard);
             finish();
         } catch (ApiException e) {
