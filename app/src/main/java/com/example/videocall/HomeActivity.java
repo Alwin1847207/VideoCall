@@ -63,6 +63,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView userName = navigationHeader.findViewById(R.id.user_name);
         TextView userEmail = navigationHeader.findViewById(R.id.user_email);
 
+
+        ImageView home_user_image = findViewById(R.id.user_profile_home);
+        TextView home_user_name = findViewById(R.id.user_name_home);
+        ImageView join_video = findViewById(R.id.image_join_video);
+
+        join_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent videoactivity = new Intent(HomeActivity.this,VideoCallActivity.class);
+                startActivity(videoactivity);
+                finish();
+            }
+        });
+
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
         if (acct != null) {
             String personName = acct.getDisplayName();
@@ -75,6 +89,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             userName.setText(personName);
             userEmail.setText(personEmail);
             //Glide.with(this).load(String.valueOf(personPhoto)).into(userProfileImage);
+
+            home_user_name.setText(personName);
+            Glide.with(this).load(String.valueOf(personPhoto)).into(home_user_image);
         }
 
     }

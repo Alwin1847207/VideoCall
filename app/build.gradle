@@ -38,4 +38,6 @@ dependencies {
     //glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    //agora.io
+    implementation 'io.agora.rtc:full-sdk:3.0.0'
 }
