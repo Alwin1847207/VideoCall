@@ -2,10 +2,14 @@ package com.example.videocall;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.SurfaceView;
+import android.view.View;
 import android.widget.FrameLayout;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.Random;
 
@@ -44,6 +48,16 @@ public class VideoCallActivity extends AppCompatActivity {
         };
         initializeAgoraEngine();
 
+        FloatingActionButton endbtn = findViewById(R.id.button_end);
+        endbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent home = new Intent(VideoCallActivity.this,HomeActivity.class);
+                startActivity(home);
+                finish();
+            }
+        });
+
     }
 
     private void initializeAgoraEngine() {
@@ -59,7 +73,7 @@ public class VideoCallActivity extends AppCompatActivity {
 
     private void setupVideoProfile() {
         mRtcEngine.enableVideo();
-        mRtcEngine.setVideoProfile(Constants.VIDEO_PROFILE_360P, false);
+        mRtcEngine.setVideoProfile(Constants.VIDEO_PROFILE_720P_6, false);
     }
 
     private void setupLocalVideo() {
