@@ -12,4 +12,5 @@
     <string name="version_1_0">Version 1.0</string>
     <string name="agora_app_id">80ef3a7a6b3d4483b98257a31d9b0eb8</string>
     <string name="join_video">Join Video</string>
+    <string name="join_audio">Join Audio</string>
 </resources>

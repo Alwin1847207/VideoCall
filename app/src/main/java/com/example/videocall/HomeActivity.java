@@ -52,16 +52,78 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        checkPermission(
-                Manifest.permission.CAMERA,
-                CAMERA_PERMISSION_CODE, Manifest.permission.RECORD_AUDIO, RECORD_AUDIO_PERMISSION_CODE,
-                Manifest.permission.MODIFY_AUDIO_SETTINGS, MODIFY_AUDIO_SETTINGS_PERMISSION_CODE,
-                Manifest.permission.ACCESS_NETWORK_STATE, ACCESS_NETWORK_STATE_PERMISSION_CODE,
-                Manifest.permission.BLUETOOTH, BLUETOOTH_PERMISSION_CODE,
-                Manifest.permission.READ_PHONE_STATE, READ_PHONE_STATE_PERMISSION_CODE,
-                Manifest.permission.WAKE_LOCK, WAKE_LOCK_PERMISSION_CODE,
-                Manifest.permission.READ_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE_PERMISSION_CODE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE_PERMISSION_CODE);
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.RECORD_AUDIO}, RECORD_AUDIO_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.MODIFY_AUDIO_SETTINGS) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.MODIFY_AUDIO_SETTINGS}, MODIFY_AUDIO_SETTINGS_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_NETWORK_STATE) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.ACCESS_NETWORK_STATE}, ACCESS_NETWORK_STATE_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.BLUETOOTH) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.BLUETOOTH}, BLUETOOTH_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.READ_PHONE_STATE}, READ_PHONE_STATE_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WAKE_LOCK) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.WAKE_LOCK}, WAKE_LOCK_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, READ_EXTERNAL_STORAGE_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+                ActivityCompat.requestPermissions(HomeActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, WRITE_EXTERNAL_STORAGE_PERMISSION_CODE);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -118,45 +180,6 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
             home_user_name.setText(personName);
             Glide.with(this).load(String.valueOf(personPhoto)).into(home_user_image);
-        }
-
-    }
-
-    private <MainActivity> void checkPermission(String camera, int cameraPermissionCode, String recordAudio, int recordAudioPermissionCode, String modifyAudioSettings, int modifyAudioSettingsPermissionCode, String accessNetworkState, int accessNetworkStatePermissionCode, String bluetooth, int bluetoothPermissionCode, String readPhoneState, int readPhoneStatePermissionCode, String wakeLock, int wakeLockPermissionCode, String readExternalStorage, int readExternalStoragePermissionCode, String writeExternalStorage, int writeExternalStoragePermissionCode) {
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), camera) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{camera}, cameraPermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), recordAudio) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{recordAudio}, recordAudioPermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), modifyAudioSettings) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{modifyAudioSettings}, modifyAudioSettingsPermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), accessNetworkState) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{accessNetworkState}, accessNetworkStatePermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), bluetooth) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{bluetooth}, bluetoothPermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), readPhoneState) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{readPhoneState}, recordAudioPermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), wakeLock) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{wakeLock}, wakeLockPermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), readExternalStorage) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{readExternalStorage}, readExternalStoragePermissionCode);
-        }
-
-        if (ContextCompat.checkSelfPermission(getApplicationContext(), writeExternalStorage) == PackageManager.PERMISSION_DENIED) {
-            ActivityCompat.requestPermissions(HomeActivity.this, new String[]{writeExternalStorage}, writeExternalStoragePermissionCode);
         }
 
     }

@@ -28,62 +28,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <include
+                android:id="@+id/popup"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                layout="@layout/home_fragment" />
 
-                <ImageView
-                    android:id="@+id/image_join_video"
-                    android:layout_width="107dp"
-                    android:layout_height="109dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.845"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.893"
-                    app:srcCompat="@drawable/videocall"
-                    android:contentDescription="TODO" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:text="@string/join_video"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.801"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/image_join_video"
-                    app:layout_constraintVertical_bias="0.32" />
-
-                <ImageView
-                    android:id="@+id/user_profile_home"
-                    android:layout_width="163dp"
-                    android:layout_height="149dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.03"
-                    app:srcCompat="@drawable/person" />
-
-                <TextView
-                    android:id="@+id/user_name_home"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/user_profile_home"
-                    app:layout_constraintVertical_bias="0.032" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
         </FrameLayout>
 
     </LinearLayout>
