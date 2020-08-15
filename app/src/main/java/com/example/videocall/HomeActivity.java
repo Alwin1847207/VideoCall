@@ -48,18 +48,10 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             Manifest.permission.READ_PHONE_STATE,
             Manifest.permission.WAKE_LOCK,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.ACCESS_WIFI_STATE,
+            Manifest.permission.INTERNET,
     };
-
-    private static final int CAMERA_PERMISSION_CODE = 100;
-    private static final int RECORD_AUDIO_PERMISSION_CODE = 102;
-    private static final int MODIFY_AUDIO_SETTINGS_PERMISSION_CODE = 103;
-    private static final int ACCESS_NETWORK_STATE_PERMISSION_CODE = 104;
-    private static final int BLUETOOTH_PERMISSION_CODE = 105;
-    private static final int READ_PHONE_STATE_PERMISSION_CODE = 106;
-    private static final int WAKE_LOCK_PERMISSION_CODE = 107;
-    private static final int READ_EXTERNAL_STORAGE_PERMISSION_CODE = 108;
-    private static final int WRITE_EXTERNAL_STORAGE_PERMISSION_CODE = 109;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,12 +92,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         ImageView home_user_image = findViewById(R.id.user_profile_home);
         TextView home_user_name = findViewById(R.id.user_name_home);
         ImageView join_video = findViewById(R.id.image_join_video);
+        ImageView join_audio = findViewById(R.id.image_join_audio);
 
         join_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent videoactivity = new Intent(HomeActivity.this, VideoCallActivity.class);
                 startActivity(videoactivity);
+                finish();
+            }
+        });
+
+        join_audio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent audioactivity = new Intent(HomeActivity.this,AudioCallActivity.class);
+                startActivity(audioactivity);
                 finish();
             }
         });
