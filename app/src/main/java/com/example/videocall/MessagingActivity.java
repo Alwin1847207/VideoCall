@@ -23,6 +23,7 @@ public class MessagingActivity extends AppCompatActivity {
                 Intent home = new Intent(MessagingActivity.this,HomeActivity.class);
                 startActivity(home);
                 finish();
+
             }
         });
     }
