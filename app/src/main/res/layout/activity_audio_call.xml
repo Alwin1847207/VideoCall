@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<?xml version="1.0" encoding="utf-8"?><!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
 <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
 <!--    xmlns:tools="http://schemas.android.com/tools"-->
 <!--    android:layout_width="match_parent"-->
@@ -9,57 +8,90 @@
 <!--</androidx.constraintlayout.widget.ConstraintLayout>-->
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_voice_chat_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AudioCallActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:background="#673AB7">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginEnd="36dp"
+            android:layout_weight="20"
+            android:onClick="onLocalAudioMuteClicked"
+            android:scaleType="centerInside"
+            android:src="@drawable/mute"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.907" />
+
+        <ImageView
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_weight="20"
+            android:onClick="onSwitchSpeakerphoneClicked"
+            android:scaleType="centerInside"
+            android:src="@drawable/audio"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/imageView4"
+            app:layout_constraintHorizontal_bias="0.542"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.907" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_marginEnd="56dp"
+            android:layout_weight="20"
+            android:onClick="onEncCallClicked"
+            android:scaleType="centerInside"
+            android:src="@drawable/endcall"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.907" />
 
         <TextView
-            android:id="@+id/quick_tips_when_use_agora_sdk"
-            android:layout_width="match_parent"
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="40dp"
-            android:gravity="center_vertical|start"
-            android:text="1. Default channel name is voiceDemoChannel1\n2. Waiting for remote users\n3. This demo only supports 1v1 voice calling" />
+            android:fontFamily="monospace"
+            android:text="Audio Call"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.113" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="552dp"
+            android:text="00:00:00"
+            android:textColor="#FDFCFC"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView14"
+            app:layout_constraintVertical_bias="0.093" />
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:onClick="onLocalAudioMuteClicked"
-                android:scaleType="centerInside"
-                android:src="@drawable/mute" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:onClick="onSwitchSpeakerphoneClicked"
-                android:scaleType="centerInside"
-                android:src="@drawable/audio" />
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="20"
-                android:onClick="onEncCallClicked"
-                android:scaleType="centerInside"
-                android:src="@drawable/endcall" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -52,6 +53,7 @@ public class VideoCallActivity extends AppCompatActivity {
         endbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(VideoCallActivity.this, "Call Ended", Toast.LENGTH_SHORT).show();
                 Intent home = new Intent(VideoCallActivity.this,HomeActivity.class);
                 startActivity(home);
                 finish();

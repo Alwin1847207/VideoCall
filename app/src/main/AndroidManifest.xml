@@ -14,7 +14,8 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
+    <uses-permission
+        android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
         tools:ignore="ProtectedPermissions" />
 
     <application
@@ -24,6 +25,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".MessageingActivity"></activity>
         <activity android:name=".MessagingActivity" />
         <activity android:name=".AudioCallActivity" />
         <activity android:name=".VideoCallActivity" />

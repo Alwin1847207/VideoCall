@@ -10,6 +10,7 @@ import io.agora.rtc.IRtcEngineEventHandler;
 import io.agora.rtc.RtcEngine;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
@@ -130,6 +131,8 @@ public class AudioCallActivity extends AppCompatActivity {
 
         // Stops/Resumes sending the local audio stream.
         mRtcEngine.muteLocalAudioStream(iv.isSelected());
+
+        Toast.makeText(this, "Audio Muted", Toast.LENGTH_SHORT).show();
     }
 
     // Tutorial Step 5
@@ -147,10 +150,15 @@ public class AudioCallActivity extends AppCompatActivity {
         //
         // This method sets whether the audio is routed to the speakerphone or earpiece. After calling this method, the SDK returns the onAudioRouteChanged callback to indicate the changes.
         mRtcEngine.setEnableSpeakerphone(view.isSelected());
+
+        Toast.makeText(this, "Speaker Toggled", Toast.LENGTH_SHORT).show();
     }
 
     // Tutorial Step 3
     public void onEncCallClicked(View view) {
+        Toast.makeText(this, "Call Ended", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(AudioCallActivity.this,HomeActivity.class);
+        startActivity(intent);
         finish();
     }
 
@@ -188,8 +196,8 @@ public class AudioCallActivity extends AppCompatActivity {
     // Tutorial Step 4
     private void onRemoteUserLeft(int uid, int reason) {
         showLongToast(String.format(Locale.US, "user %d left %d", (uid & 0xFFFFFFFFL), reason));
-        View tipMsg = findViewById(R.id.quick_tips_when_use_agora_sdk); // optional UI
-        tipMsg.setVisibility(View.VISIBLE);
+        //View tipMsg = findViewById(R.id.quick_tips_when_use_agora_sdk); // optional UI
+        //tipMsg.setVisibility(View.VISIBLE);
     }
 
     // Tutorial Step 6
