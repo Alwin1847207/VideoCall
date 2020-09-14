@@ -93,10 +93,22 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         TextView home_user_name = findViewById(R.id.user_name_home);
         ImageView join_video = findViewById(R.id.image_join_video);
         ImageView join_audio = findViewById(R.id.image_join_audio);
+        ImageView join_message = findViewById(R.id.imageView2);
+
+        join_message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(HomeActivity.this, "Messaging", Toast.LENGTH_SHORT).show();
+                Intent messgaeing = new Intent(HomeActivity.this,MessagingActivity.class);
+                startActivity(messgaeing);
+                finish();
+            }
+        });
 
         join_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(HomeActivity.this, "Video Call", Toast.LENGTH_SHORT).show();
                 Intent videoactivity = new Intent(HomeActivity.this, VideoCallActivity.class);
                 startActivity(videoactivity);
                 finish();
@@ -106,6 +118,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         join_audio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(HomeActivity.this, "Audio Call", Toast.LENGTH_SHORT).show();
                 Intent audioactivity = new Intent(HomeActivity.this,AudioCallActivity.class);
                 startActivity(audioactivity);
                 finish();
